@@ -1,0 +1,23 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "homework-13 friendfinder",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scandrews/FriendFinder.git"
+  },
+  "keywords": [
+    "friendfinder"
+  ],
+  "author": "steve",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scandrews/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/scandrews/FriendFinder#readme"
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="em-us">
+<HEAD>
+    <title>Steve's matching page</title>
+
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/style">
+</HEAD>
+
+
+<BODY>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Steve's Matching Page</h1>
+			<h3>Answer a few questions</h3>
+    </div>
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Add Characters</strong></h3>
+          </div>
+          <div class="panel-body">
+            <form method="POST" role="form">
+
+              <div class="form-group">
+                <label for="name">Name (required)</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+
+              <div class="form-group">
+                <label for="role">Link to Pic</label>
+                <input type="text" class="form-control" id="piclink">
+              </div>
+
+            </form>
+            <br>
+              <div class="form-group">
+                <label for="role">Others would describe me as a social butterfly</label>
+                <input type="number" class="form-control" id="trait1">
+              </div>
+              <div class="form-group">
+                <label for="role">I would rather have my work be the best logical choice, even if it goes against my values</label>
+                <input type="number" class="form-control" id="trait2">
+              </div>
+              <div class="form-group">
+                <label for="role">My workspace is often messy</label>
+                <input type="number" class="form-control" id="trait3">
+              </div>
+              <div class="form-group">
+                <label for="role">I am very detail-oriented</label>
+                <input type="number" class="form-control" id="trait4">
+              </div>
+              <div class="form-group">
+                <label for="role">Others would describe me as compassionate and empathic</label>
+                <input type="number" class="form-control" id="trait5">
+              </div>
+              <div class="form-group">
+                <label for="role">I often react emotionally to feedback</label>
+                <input type="number" class="form-control" id="trait6">
+              </div>
+              <div class="form-group">
+                <label for="role">I often see possibilities, even when others can’t</label>
+                <input type="number" class="form-control" id="trait7">
+              </div>
+              <div class="form-group">
+                <label for="role">I am the life of the party</label>
+                <input type="number" class="form-control" id="trait8">
+              </div>
+
+
+
+            <div class="text">
+              <button type="submit" class="btn btn-primary btn-sm" id="search">
+              Search For a Partner</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  $("#submit").on("click", function(){
+      console.log("WTF");
+      $("#resultsModal").modal('toggle');
+  });
+
+  $("#search").on("click", function(){
+    var newUser = {
+      name: $("#name").val().trim(),
+      pic: $("#piclink").val().trim(),
+      traits: [
+      $("#trait1").val().trim(),
+      $("#trait2").val().trim(),
+      $("#trait3").val().trim(),
+      $("#trait4").val().trim(),
+      $("#trait5").val().trim(),
+      $("#trait6").val().trim(),
+      $("#trait7").val().trim(),
+      $("#trait8").val().trim()
+      ]
+    };
+    console.log(newUser)
+
+    $.post("/api/search", newUser)
+      .done(function(data) {
+        console.log(data);
+        alert("requested the search");
+      });
+      $.get("/matching.html/usermatch", function(data){
+         alert("Your Match is " + data.name + "img src=" + data.pic);
+      });
+  });
+
+</script>
+
+</BODY>
+</html>
+
+
