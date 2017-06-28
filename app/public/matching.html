@@ -40,35 +40,35 @@
             </form>
             <br>
               <div class="form-group">
-                <label for="role">Others would describe me as a social butterfly</label>
+                <label for="role">Others would describe me as a social butterfly (enter a number between 1 and 5)</label>
                 <input type="number" class="form-control" id="trait1">
               </div>
               <div class="form-group">
-                <label for="role">I would rather have my work be the best logical choice, even if it goes against my values</label>
+                <label for="role">I would rather have my work be the best logical choice, even if it goes against my values (enter a number between 1 and 5)</label>
                 <input type="number" class="form-control" id="trait2">
               </div>
               <div class="form-group">
-                <label for="role">My workspace is often messy</label>
+                <label for="role">My workspace is often messy (enter a number between 1 and 5)</label>
                 <input type="number" class="form-control" id="trait3">
               </div>
               <div class="form-group">
-                <label for="role">I am very detail-oriented</label>
+                <label for="role">I am very detail-oriented (enter a number between 1 and 5)</label>
                 <input type="number" class="form-control" id="trait4">
               </div>
               <div class="form-group">
-                <label for="role">Others would describe me as compassionate and empathic</label>
+                <label for="role">Others would describe me as compassionate and empathic (enter a number between 1 and 5)</label>
                 <input type="number" class="form-control" id="trait5">
               </div>
               <div class="form-group">
-                <label for="role">I often react emotionally to feedback</label>
+                <label for="role">I often react emotionally to feedback (enter a number between 1 and 5)</label>
                 <input type="number" class="form-control" id="trait6">
               </div>
               <div class="form-group">
-                <label for="role">I often see possibilities, even when others can’t</label>
+                <label for="role">I often see possibilities, even when others can’t (enter a number between 1 and 5)</label>
                 <input type="number" class="form-control" id="trait7">
               </div>
               <div class="form-group">
-                <label for="role">I am the life of the party</label>
+                <label for="role">I am the life of the party (enter a number between 1 and 5)</label>
                 <input type="number" class="form-control" id="trait8">
               </div>
 
@@ -117,6 +117,8 @@
       });
       $.get("/matching.html/usermatch", function(data){
          alert("Your Match is " + data.name + "img src=" + data.pic);
+         $(".panel-body").html("Your Match is - " + data.name + "<p>");
+         $(".panel-body").append("<img src = '" + data.pic + "''>");
       });
   });
 

@@ -25,9 +25,9 @@ var bestMatch = {
 	score: 0
 }
 
-for (i=0; i<users.length; i++){
-	console.log(users[i].name + users[i].photo + users[i].scores);
-}
+// for (i=0; i<users.length; i++){
+// 	console.log(users[i].name + users[i].photo + users[i].scores);
+// }
 
 //  Routes
 //  Basic routes for pages
@@ -55,7 +55,6 @@ app.post("/api/search", function(req, res){
 		matchtotal = 0;
 		for (a=0; a<user.traits.length; a++){
 			matchtotal = matchtotal + (Math.abs(parseInt(user.traits[a]) - parseInt(users[i].scores[a])));
-			console.log(matchtotal);
 		};
 		if (bestMatch.score < matchtotal) {
 			bestMatch.score = matchtotal;
