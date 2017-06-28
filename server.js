@@ -1,18 +1,18 @@
 //server for homework 13 - the matching page
 
-var cool = require("cool-ascii-faces");
+// var cool = require("cool-ascii-faces");
 var express = require("express");
 var bodyParser = require ("body-parser");
 var path = require ("path");
 var app = express();
-// var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // set up express parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-app.set("port", (process.env.PORT || 3000));
+// app.set("port", (process.env.PORT || 3000));
 
 var users = require("./app/data/friends.json");
 var matchtotal = 0;
@@ -33,9 +33,9 @@ var bestMatch = {
 
 //  Routes
 //  Basic routes for pages
-app.get('/cool', function(request, response) {
-  response.send(cool());
-});
+// app.get('/cool', function(request, response) {
+//   response.send(cool());
+// });
 
 app.get("/", function(req, res){
 	res.sendFile(path.join(__dirname, "/app/public/index.html"));
