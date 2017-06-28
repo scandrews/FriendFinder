@@ -12,7 +12,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-// app.set("port", (process.env.PORT || 3000));
 
 var users = require("./app/data/friends.json");
 var matchtotal = 0;
@@ -27,15 +26,8 @@ var bestMatch = {
 	score: 0
 }
 
-// for (i=0; i<users.length; i++){
-// 	console.log(users[i].name + users[i].photo + users[i].scores);
-// }
-
 //  Routes
 //  Basic routes for pages
-// app.get('/cool', function(request, response) {
-//   response.send(cool());
-// });
 
 app.get("/", function(req, res){
 	res.sendFile(path.join(__dirname, "/app/public/index.html"));

@@ -115,7 +115,6 @@
         console.log(data);
       });
       $.get("/matching.html/usermatch", function(data){
-         alert("Your Match is " + data.name + "img src=" + data.pic);
          $(".panel-body").html("Your Match is - " + data.name + "<p>");
          $(".panel-body").append("<img src = '" + data.pic + "''>");
       });
