@@ -113,7 +113,6 @@
     $.post("/api/search", newUser)
       .done(function(data) {
         console.log(data);
-        alert("requested the search");
       });
       $.get("/matching.html/usermatch", function(data){
          alert("Your Match is " + data.name + "img src=" + data.pic);
