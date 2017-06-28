@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/scandrews/FriendFinder/issues"
   },
-  "homepage": "https://github.com/scandrews/FriendFinder#readme"
+  "homepage": "https://github.com/scandrews/FriendFinder#readme",
+  "dependencies": {
+    "cool-ascii-faces": "1.3.4"
+  }
 }
